@@ -57,8 +57,26 @@ const getLocationByName = (
   return api.callExternalApi<LocationModel[]>({ config });
 };
 
+const getLocalLocation = (): Promise<{ lat: number; lon: number }> => {
+  return new Promise((resolve, reject) => {
+    if (!navigator.geolocation) {
+      reject("Geolocation is not supported by your browser");
+    } else {
+      navigator.geolocation.getCurrentPosition(
+        ({ coords }) => {
+          resolve({ lat: coords.latitude, lon: coords.longitude });
+        },
+        (err) => {
+          reject(err.message);
+        }
+      );
+    }
+  });
+};
+
 const LocationService = {
   getLocationByName,
+  getLocalLocation,
 };
 
 Object.freeze(LocationService);

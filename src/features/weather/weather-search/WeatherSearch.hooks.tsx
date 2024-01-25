@@ -1,8 +1,10 @@
+import LocationService from "@/services/LocationService";
 import { ChangeEventHandler, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const useWeatherSearch = () => {
   const [search, setSearch] = useState<string>("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
   const navigate = useNavigate();
 
@@ -13,9 +15,32 @@ export const useWeatherSearch = () => {
     }
   };
 
+  const handleFocus = () => {
+    setIsDropdownOpen(true);
+  };
+
+  const handleBlur = () => {
+    setIsDropdownOpen(false);
+  };
+
   const changeSearch: ChangeEventHandler = (event) => {
     setSearch((event.target as HTMLInputElement).value);
   };
 
-  return { search, searchLocation, changeSearch };
+  const useLocation = async () => {
+    const { lat, lon } = await LocationService.getLocalLocation();
+    if (lat && lon) {
+      navigate(`/weather?lat=${lat}&lon=${lon}`);
+    }
+  };
+
+  return {
+    search,
+    searchLocation,
+    changeSearch,
+    handleFocus,
+    handleBlur,
+    isDropdownOpen,
+    useLocation,
+  };
 };
