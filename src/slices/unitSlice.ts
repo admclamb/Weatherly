@@ -6,7 +6,7 @@ interface UnitState {
 }
 
 const initialState: UnitState = {
-  units: Units.FAHRENHEIT,
+  units: Units.IMPERIAL,
 };
 
 export const unitSlice = createSlice({

@@ -40,7 +40,7 @@ const CurrentWeather = ({ currentWeather }: Props) => {
               {Math.floor(currentWeather.temp)}
               <span>°</span>
               <span className="absolute text-lg text-stone-500 bottom-0 right-0 translate-y-1">
-                {units === Units.FAHRENHEIT ? "F" : "C"}
+                {units === Units.IMPERIAL ? "F" : "C"}
               </span>
             </p>
           </div>
@@ -49,7 +49,7 @@ const CurrentWeather = ({ currentWeather }: Props) => {
           <li className="flex justify-between items-center py-3 pr-3 border-b">
             Wind{" "}
             <span className="font-semibold">{`${currentWeather.wind_speed} ${
-              units === Units.FAHRENHEIT ? "MPH" : "KPH"
+              units === Units.IMPERIAL ? "MPH" : "KPH"
             }`}</span>
           </li>
           <li className="flex justify-between items-center py-3 pr-3 border-b">

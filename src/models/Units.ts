@@ -1,4 +1,5 @@
 export enum Units {
-  FAHRENHEIT = "fahrenheit",
-  CELCIUS = "celcius",
+  STANDARD = "standard",
+  METRIC = "metric",
+  IMPERIAL = "imperial",
 }
