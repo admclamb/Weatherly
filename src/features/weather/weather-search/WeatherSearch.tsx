@@ -15,7 +15,6 @@ const WeatherSearch = () => {
     searchLocation,
     changeSearch,
     handleFocus,
-    isDropdownOpen,
     handleBlur,
     useLocation,
   } = useWeatherSearch();

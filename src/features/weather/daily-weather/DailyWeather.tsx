@@ -1,6 +1,6 @@
 import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { useAppSelector } from "@/hooks/useAppSelector";
+// import { useAppSelector } from "@/hooks/useAppSelector";
 import { WeatherDailyModel } from "@/models/WeatherDailyModel";
 import dayjs from "dayjs";
 import { CloudRainWind, MoveRight } from "lucide-react";
@@ -11,8 +11,8 @@ type Props = {
 };
 
 const DailyWeather = ({ dailyWeather }: Props) => {
-  const { units } = useAppSelector((state) => state.units);
-  const { location } = useAppSelector((state) => state.location);
+  // const { units } = useAppSelector((state) => state.units);
+  // const { location } = useAppSelector((state) => state.location);
 
   if (!dailyWeather) {
     return null;
