@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import unitReducer from "../slices/unitSlice";
+import locationReducer from "../slices/locationSlice";
 
 const rootReducer = combineReducers({
   units: unitReducer,
+  location: locationReducer,
 });
 
 export function setupStore(preloadedState?: Partial<RootState>) {

@@ -17,7 +17,6 @@ export const useWeatherHooks = () => {
   const [error, setError] = useState<ErrorModel | null>(null);
 
   useEffect(() => {
-    console.log("LAT: ", lat, "LON: ", lon);
     if (typeof lat === "number" || typeof lon === "number") {
       navigate("/");
     }

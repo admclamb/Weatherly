@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const SearchResults = () => {
   const { searchQuery, isLoading, error, locations } = useSearchResults();
-  console.log(searchQuery);
+
   return (
     <LayoutSolid>
       <Container className="py-5 px-2 flex flex-col gap-5">
