@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import Container from "@/layout/container/Container";
 import ErrorAlert from "@/errors/ErrorAlert";
 import CurrentWeather from "@/features/weather/current-weather/CurrentWeather";
+import DailyWeather from "@/features/weather/daily-weather/DailyWeather";
 
 const Weather = () => {
   const { weather, error } = useWeatherHooks();
@@ -13,6 +14,7 @@ const Weather = () => {
         <div className="flex flex-col gap-5 col-span-12 md:col-span-9">
           <ErrorAlert error={error} />
           <CurrentWeather currentWeather={weather?.current} />
+          <DailyWeather dailyWeather={weather?.daily} />
         </div>
         <aside className="col-span-12 md:col-span-3 flex flex-col gap-5">
           <Card>TESTING</Card>

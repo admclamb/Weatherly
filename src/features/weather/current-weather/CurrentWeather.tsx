@@ -19,11 +19,12 @@ const CurrentWeather = ({ currentWeather }: Props) => {
     return null;
   }
 
-  console.log(currentWeather);
   return (
     <Card>
       <div className="flex justify-between items-center border-b p-3">
-        <h6 className="font-semibold uppercase">Current Weather</h6>
+        <h6 className="font-semibold uppercase text-stone-500">
+          Current Weather
+        </h6>
         <p className="text-stone-500">
           {dayjs(currentWeather.dt).format("HH:mm a")}
         </p>

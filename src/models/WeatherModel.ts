@@ -4,6 +4,6 @@ import { WeatherHourlyModel } from "./WeatherHourlyModel";
 
 export interface WeatherModel {
   current?: WeatherCurrentModel;
-  hourly?: WeatherHourlyModel;
-  daily?: WeatherDailyModel;
+  hourly?: WeatherHourlyModel[];
+  daily?: WeatherDailyModel[];
 }
