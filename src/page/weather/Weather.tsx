@@ -5,6 +5,7 @@ import ErrorAlert from "@/errors/ErrorAlert";
 import WeatherNav from "@/features/weather/weather-nav/WeatherNav";
 import { Route, Routes } from "react-router-dom";
 import WeatherToday from "./weather-today/WeatherToday";
+import WeatherAlert from "@/features/weather/weather-alert/WeatherAlert";
 
 const Weather = () => {
   const { weather, error } = useWeatherHooks();
@@ -13,6 +14,7 @@ const Weather = () => {
       <Container className="px-2 flex flex-col gap-5">
         <ErrorAlert error={error} />
         <WeatherNav />
+        <WeatherAlert weather={weather} />
         <Routes>
           <Route index element={<WeatherToday weather={weather} />} />
         </Routes>
