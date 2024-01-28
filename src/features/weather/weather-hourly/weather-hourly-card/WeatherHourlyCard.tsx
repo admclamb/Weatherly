@@ -92,7 +92,7 @@ const WeatherHourlyCard = ({ weatherHourly }: Props) => {
               {weatherHourly?.snow ? (
                 <div className="flex justify-between items-center border-b py-3">
                   <span className="font-semibold">Snow</span>
-                  <p>{weatherHourly?.snow} mm/h</p>
+                  <p>{weatherHourly?.snow["1h"]} mm/h</p>
                 </div>
               ) : null}
             </div>

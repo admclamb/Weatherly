@@ -18,5 +18,7 @@ export interface WeatherHourlyModel {
   wind_deg: number;
   wind_speed: number;
   rain: number;
-  snow: number;
+  snow?: {
+    "1h": number;
+  };
 }
