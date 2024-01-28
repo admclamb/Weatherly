@@ -29,4 +29,5 @@ export interface WeatherDailyModel {
   pop: number;
   rain: number;
   uvi: number;
+  weather: { id: number; main: string; description: string; icon: string }[];
 }

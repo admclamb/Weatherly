@@ -14,7 +14,6 @@ export const useSettings = () => {
   };
 
   const changeTheme = (value: "light" | "dark" | "system") => {
-    console.log("VALUE: ", value);
     setTheme(value);
   };
 

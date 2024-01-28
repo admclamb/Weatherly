@@ -8,7 +8,6 @@ const getMap = (
   x = 5,
   y = 5
 ): Promise<ApiResponse<string>> => {
-  console.log(layer);
   const config: AxiosRequestConfig = {
     url: `/map/${encodeURIComponent(layer)}/${encodeURIComponent(
       z
@@ -18,9 +17,9 @@ const getMap = (
   return api.callExternalApi<string>({ config });
 };
 
-const MapService = {
+const mapService = {
   getMap,
 };
 
-Object.freeze(MapService);
-export default MapService;
+Object.freeze(mapService);
+export { mapService };

@@ -1,3 +1,4 @@
+import Icon from "@/components/icon/Icon";
 import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 // import { useAppSelector } from "@/hooks/useAppSelector";
@@ -11,9 +12,6 @@ type Props = {
 };
 
 const DailyWeather = ({ dailyWeather }: Props) => {
-  // const { units } = useAppSelector((state) => state.units);
-  // const { location } = useAppSelector((state) => state.location);
-
   if (!dailyWeather) {
     return null;
   }
@@ -34,11 +32,28 @@ const DailyWeather = ({ dailyWeather }: Props) => {
             >
               <div>
                 <p className="font-semibold hover:underline underline-offset-3">
-                  {index === 0 ? "Today" : dayjs(day.dt).format("ddd")}
+                  {index === 0 ? "Today" : dayjs.unix(day.dt).format("ddd")}
                 </p>
                 <p>{dayjs.unix(day.dt).format("M/DD")}</p>
               </div>
-              <div></div>
+              <div className="flex gap-1 items-center">
+                <Icon
+                  icon={day.weather[0].icon}
+                  description={day.weather[0].description}
+                  className="w-14"
+                />
+                <div className="flex gap-1 items-end">
+                  <p className="font-semibold text-2xl">
+                    {day.temp.max.toFixed(0)}°
+                  </p>
+                  <p className="text-stone-500 text-lg">
+                    {day.temp.min.toFixed(0)}°
+                  </p>
+                </div>
+              </div>
+              <div>
+                <p className="text-semibold">{day.weather[0].description}</p>
+              </div>
               <div className="ml-auto">
                 <p className="text-stone-500 flex items-center gap-3">
                   <CloudRainWind size={18} />

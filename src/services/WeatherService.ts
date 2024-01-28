@@ -16,9 +16,9 @@ const getWeather = (
   return api.callExternalApi<WeatherModel>({ config });
 };
 
-const WeatherService = {
+const weatherService = {
   getWeather,
 };
 
-Object.freeze(WeatherService);
-export default WeatherService;
+Object.freeze(weatherService);
+export { weatherService };

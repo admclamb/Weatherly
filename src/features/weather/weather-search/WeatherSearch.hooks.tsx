@@ -1,4 +1,4 @@
-import LocationService from "@/services/LocationService";
+import { locationService } from "@/services/LocationService";
 import { ChangeEventHandler, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -28,7 +28,7 @@ export const useWeatherSearch = () => {
   };
 
   const useLocation = async () => {
-    const { lat, lon } = await LocationService.getLocalLocation();
+    const { lat, lon } = await locationService.getLocalLocation();
     if (lat && lon) {
       navigate(`/weather?lat=${lat}&lon=${lon}`);
     }

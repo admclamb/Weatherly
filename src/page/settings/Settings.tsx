@@ -14,7 +14,6 @@ import { useSettings } from "./Settings.hooks";
 
 const Settings = () => {
   const { units, changeUnits, theme, changeTheme } = useSettings();
-  console.log(units, theme);
   return (
     <Layout>
       <Container className="py-5 px-2">

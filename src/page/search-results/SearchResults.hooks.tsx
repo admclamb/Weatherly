@@ -1,6 +1,6 @@
 import { ErrorModel } from "@/models/ErrorModel";
 import { LocationModel } from "@/models/LocationModel";
-import LocationService from "@/services/LocationService";
+import { locationService } from "@/services/LocationService";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
@@ -21,7 +21,7 @@ export const useSearchResults = () => {
         setError({ message: "A search query is required." });
         return;
       }
-      const [data, apiError] = await LocationService.getLocationByName(
+      const [data, apiError] = await locationService.getLocationByName(
         searchQuery
       );
       if (data) {
