@@ -66,7 +66,9 @@ const CurrentWeather = ({ currentWeather }: Props) => {
         </ul>
       </div>
       <div className="flex justify-between items-center border-t p-3">
-        <p className="font-semibold">{currentWeather.weather[0].description}</p>
+        <p className="font-semibold capitalize">
+          {currentWeather.weather[0].description}
+        </p>
         <Link to="current" className={buttonVariants({ variant: "ghost" })}>
           Show More <MoveRight className="ml-1" />
         </Link>

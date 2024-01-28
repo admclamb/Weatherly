@@ -31,7 +31,7 @@ const WeatherAlert = ({ weather }: Props) => {
         </Link>
       </div>
 
-      <p className="truncate">{alert.description}</p>
+      <p className="truncate capitalize">{alert.description}</p>
     </Alert>
   );
 };

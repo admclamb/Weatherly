@@ -19,13 +19,12 @@ type Props = {
 
 const WeatherHourlyCard = ({ weatherHourly }: Props) => {
   const { units } = useAppSelector((state) => state.units);
-  console.log(weatherHourly);
   return (
     <Card className="p-3">
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
-          <AccordionTrigger>
-            <div className="flex items-center gap-5">
+          <AccordionTrigger className="flex items-center gap-5 w-full">
+            <div className="flex items-center gap-5 w-full">
               <p className="font-semibold">
                 {dayjs.unix(weatherHourly.dt).format("h:mm a")}
               </p>
@@ -42,7 +41,9 @@ const WeatherHourlyCard = ({ weatherHourly }: Props) => {
                   </span>
                 </p>
               </div>
-              <p>{weatherHourly.weather[0].description}</p>
+              <p className="capitalize">
+                {weatherHourly.weather[0].description}
+              </p>
               <div className="ml-auto">
                 <p className="text-stone-500 flex items-center gap-3">
                   <CloudRainWind size={18} />
@@ -51,47 +52,50 @@ const WeatherHourlyCard = ({ weatherHourly }: Props) => {
               </div>
             </div>
           </AccordionTrigger>
-          <AccordionContent className="grid grid-cols-2 gap-5">
-            <div className="flex justify-between items-center border-b py-3">
-              <span className="font-semibold">Wind</span>
-              <p>
-                {Math.floor(weatherHourly.wind_speed)}{" "}
-                {units === Units.IMPERIAL ? "MPH" : "KPH"}
-              </p>
-            </div>
-            <div className="flex justify-between items-center border-b py-3">
-              <span className="font-semibold">Wind Direction</span>
-              <p>{calculateDirection(weatherHourly.wind_deg).fullName}</p>
-            </div>
-            <div className="flex justify-between items-center border-b py-3">
-              <span className="font-semibold">Humidity</span>
-              <p>{weatherHourly.humidity}%</p>
-            </div>
-            <div className="flex justify-between items-center border-b py-3">
-              <span className="font-semibold">Visibility</span>
-              <p>{weatherHourly.visibility} Meters</p>
-            </div>
-            <div className="flex justify-between items-center border-b py-3">
-              <span className="font-semibold">Dew Point</span>
-              <p>
-                {weatherHourly.dew_point} °
-                {units === Units.IMPERIAL ? "F" : "C"}
-              </p>
-            </div>
-            <div className="flex justify-between items-center border-b py-3">
-              <span className="font-semibold">UV Index</span>
-              <p>{weatherHourly.uvi} UV Index</p>
-            </div>
-            <div className="flex justify-between items-center border-b py-3">
-              <span className="font-semibold">Clouds</span>
-              <p>{weatherHourly.clouds}% Cloudy</p>
-            </div>
-            {weatherHourly?.snow ? (
+          <AccordionContent className="flex flex-col">
+            <h4 className="text-lg font-semibold">Information</h4>
+            <div className="grid grid-cols-2 gap-5">
               <div className="flex justify-between items-center border-b py-3">
-                <span className="font-semibold">Snow</span>
-                <p>{weatherHourly?.snow} mm/h</p>
+                <span className="font-semibold">Wind</span>
+                <p>
+                  {Math.floor(weatherHourly.wind_speed)}{" "}
+                  {units === Units.IMPERIAL ? "MPH" : "KPH"}
+                </p>
               </div>
-            ) : null}
+              <div className="flex justify-between items-center border-b py-3">
+                <span className="font-semibold">Wind Direction</span>
+                <p>{calculateDirection(weatherHourly.wind_deg).fullName}</p>
+              </div>
+              <div className="flex justify-between items-center border-b py-3">
+                <span className="font-semibold">Humidity</span>
+                <p>{weatherHourly.humidity}%</p>
+              </div>
+              <div className="flex justify-between items-center border-b py-3">
+                <span className="font-semibold">Visibility</span>
+                <p>{weatherHourly.visibility} Meters</p>
+              </div>
+              <div className="flex justify-between items-center border-b py-3">
+                <span className="font-semibold">Dew Point</span>
+                <p>
+                  {weatherHourly.dew_point} °
+                  {units === Units.IMPERIAL ? "F" : "C"}
+                </p>
+              </div>
+              <div className="flex justify-between items-center border-b py-3">
+                <span className="font-semibold">UV Index</span>
+                <p>{weatherHourly.uvi} UV Index</p>
+              </div>
+              <div className="flex justify-between items-center border-b py-3">
+                <span className="font-semibold">Clouds</span>
+                <p>{weatherHourly.clouds}% Cloudy</p>
+              </div>
+              {weatherHourly?.snow ? (
+                <div className="flex justify-between items-center border-b py-3">
+                  <span className="font-semibold">Snow</span>
+                  <p>{weatherHourly?.snow} mm/h</p>
+                </div>
+              ) : null}
+            </div>
           </AccordionContent>
         </AccordionItem>
       </Accordion>

@@ -19,6 +19,7 @@ export interface WeatherDailyModel {
     eve: number;
     morn: number;
   };
+  summary: string;
   pressure: number;
   humidity: number;
   dew_point: number;

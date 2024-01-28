@@ -52,7 +52,9 @@ const DailyWeather = ({ dailyWeather }: Props) => {
                 </div>
               </div>
               <div>
-                <p className="text-semibold">{day.weather[0].description}</p>
+                <p className="text-semibold capitalize">
+                  {day.weather[0].description}
+                </p>
               </div>
               <div className="ml-auto">
                 <p className="text-stone-500 flex items-center gap-3">
