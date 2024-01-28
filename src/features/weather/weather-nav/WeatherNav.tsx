@@ -8,7 +8,6 @@ const WeatherNav = () => {
   const lon = searchParams.get("lon");
 
   const isActive = (path: string): boolean => {
-    console.log(path, location.pathname.includes(path), location.pathname);
     if (path === "/weather") {
       return location.pathname === path;
     }

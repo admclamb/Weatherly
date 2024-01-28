@@ -26,12 +26,10 @@ export const useWeatherToday = () => {
   useEffect(() => {
     if (!weather) {
       (async () => {
-        console.log("NOT IN HERE");
         if (
           typeof Number(lat) !== "number" ||
           typeof Number(lon) !== "number"
         ) {
-          console.log("NOT A NUMBER");
           navigate("/");
         }
         const [data, apiError] = await weatherService.getWeather(
@@ -39,8 +37,6 @@ export const useWeatherToday = () => {
           Number(lon),
           units
         );
-
-        console.log(data);
 
         if (data) {
           dispatch(setWeather(data));

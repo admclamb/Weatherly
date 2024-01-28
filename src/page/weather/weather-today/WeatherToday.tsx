@@ -7,7 +7,6 @@ import ErrorAlert from "@/errors/ErrorAlert";
 const WeatherToday = () => {
   const { weather, error } = useWeatherToday();
 
-  console.log(weather);
   return (
     <div className="grid grid-cols-12 gap-5">
       <ErrorAlert className="col-span-12" error={error} />

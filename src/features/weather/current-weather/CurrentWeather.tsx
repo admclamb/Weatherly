@@ -26,7 +26,7 @@ const CurrentWeather = ({ currentWeather }: Props) => {
           Current Weather
         </h6>
         <p className="text-stone-500">
-          {dayjs(currentWeather.dt).format("HH:mm a")}
+          {dayjs.unix(currentWeather.dt).format("hh:mm a")}
         </p>
       </div>
       <div className="grid grid-cols-2">
@@ -35,13 +35,17 @@ const CurrentWeather = ({ currentWeather }: Props) => {
             icon={currentWeather.weather[0].icon}
             description={currentWeather.weather[0].description}
           />
-          <div>
-            <p className="text-4xl font-semibold relative">
+          <div className="flex flex-col gap-1">
+            <p className="text-4xl font-semibold relative w-fit">
               {Math.floor(currentWeather.temp)}
               <span>°</span>
               <span className="absolute text-lg text-stone-500 bottom-0 right-0 translate-y-1">
                 {units === Units.IMPERIAL ? "F" : "C"}
               </span>
+            </p>
+            <p className="text-lg">
+              Fees like {Math.ceil(currentWeather.feels_like)}
+              <span>°</span>
             </p>
           </div>
         </div>

@@ -9,7 +9,12 @@ export interface WeatherHourlyModel {
   uvi: number;
   visibility: number;
   pop: number;
-  weather: {}[];
+  weather: {
+    id: number;
+    icon: string;
+    main: string;
+    description: string;
+  }[];
   wind_deg: number;
   wind_speed: number;
   rain: number;
