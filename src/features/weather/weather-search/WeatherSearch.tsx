@@ -1,23 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Navigation, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { useWeatherSearch } from "./WeatherSearch.hooks";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const WeatherSearch = () => {
-  const {
-    search,
-    searchLocation,
-    changeSearch,
-    handleFocus,
-    handleBlur,
-    useLocation,
-  } = useWeatherSearch();
+  const { search, searchLocation, changeSearch, handleFocus, handleBlur } =
+    useWeatherSearch();
   return (
     <form
       onSubmit={searchLocation}
