@@ -19,7 +19,6 @@ const CurrentWeather = ({ currentWeather }: Props) => {
     return null;
   }
 
-  console.log(currentWeather);
   return (
     <Card>
       <div className="flex justify-between items-center border-b p-3">

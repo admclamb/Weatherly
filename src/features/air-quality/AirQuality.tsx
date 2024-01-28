@@ -47,7 +47,6 @@ const AirQuality = () => {
     return null;
   }
 
-  console.log(Array.isArray(airQuality), airQuality);
   const currentAirQuality = airQuality.list[0];
   return (
     <Card className="p-3">
