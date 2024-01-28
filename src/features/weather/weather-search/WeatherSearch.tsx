@@ -25,24 +25,24 @@ const WeatherSearch = () => {
       onFocus={handleFocus}
       onBlur={handleBlur}
     >
-      <DropdownMenu>
-        <DropdownMenuTrigger className="w-full">
-          <div className="relative w-full">
-            <Input
-              className="pr-16"
-              type="search"
-              placeholder="Search a city"
-              value={search}
-              onChange={changeSearch}
-            />
-            <Button
-              className="absolute right-0 top-1/2 -translate-y-1/2"
-              variant="ghost"
-            >
-              <Search />
-            </Button>
-          </div>
-        </DropdownMenuTrigger>
+      {/* <DropdownMenu> */}
+      {/* <DropdownMenuTrigger className="w-full"> */}
+      <div className="relative w-full">
+        <Input
+          className="pr-16"
+          type="search"
+          placeholder="Search a city"
+          value={search}
+          onChange={changeSearch}
+        />
+        <Button
+          className="absolute right-0 top-1/2 -translate-y-1/2"
+          variant="ghost"
+        >
+          <Search />
+        </Button>
+      </div>
+      {/* </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuItem>
             <Button
@@ -54,7 +54,7 @@ const WeatherSearch = () => {
             </Button>
           </DropdownMenuItem>
         </DropdownMenuContent>
-      </DropdownMenu>
+      </DropdownMenu> */}
     </form>
   );
 };
