@@ -1,5 +1,4 @@
 import { Alert } from "@/components/ui/alert";
-import { buttonVariants } from "@/components/ui/button";
 import { WeatherModel } from "@/models/WeatherModel";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";

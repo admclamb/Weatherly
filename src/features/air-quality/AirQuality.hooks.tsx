@@ -1,6 +1,5 @@
 import { useAppSelector } from "@/hooks/useAppSelector";
 import { AirQualityModel } from "@/models/AirQualityModel";
-import { ErrorModel } from "@/models/ErrorModel";
 import { airPollutionService } from "@/services/AirPollutionService";
 import { useEffect, useState } from "react";
 
