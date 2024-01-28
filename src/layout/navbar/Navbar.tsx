@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Container from "../container/Container";
 import ThemeToggle from "@/components/button/ThemeToggle";
 import NavbarMobile from "./navbar-mobile/NavbarMobile";
+import WeatherSearch from "@/features/weather/weather-search/WeatherSearch";
 
 type Props = {
   bgColor?: string;
@@ -26,6 +27,9 @@ const Navbar = ({
           </li>
         </ul>
         <ul className="items-center flex gap-5">
+          <li className="hidden md:block">
+            <WeatherSearch />
+          </li>
           <li className="hidden md:block">
             <Link to="/" className="py-2 px-2 block">
               Home

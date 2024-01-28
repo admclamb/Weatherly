@@ -36,13 +36,13 @@ const DailyWeather = ({ dailyWeather }: Props) => {
                 <p className="font-semibold hover:underline underline-offset-3">
                   {index === 0 ? "Today" : dayjs(day.dt).format("ddd")}
                 </p>
-                <p>{dayjs(day.dt).format("M/DD")}</p>
+                <p>{dayjs.unix(day.dt).format("M/DD")}</p>
               </div>
               <div></div>
               <div className="ml-auto">
                 <p className="text-stone-500 flex items-center gap-3">
                   <CloudRainWind size={18} />
-                  <span>{day.pop * 100}%</span>
+                  <span>{(day.pop * 100).toFixed(0)}%</span>
                 </p>
               </div>
             </Link>

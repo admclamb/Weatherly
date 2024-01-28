@@ -2,6 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-y: scroll;
+}
+
+/* Fix for bug with radix ui */
+body[style] {
+  margin: 0 !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
