@@ -19,6 +19,7 @@ const CurrentWeather = ({ currentWeather }: Props) => {
     return null;
   }
 
+  console.log(currentWeather);
   return (
     <Card>
       <div className="flex justify-between items-center border-b p-3">
@@ -57,8 +58,7 @@ const CurrentWeather = ({ currentWeather }: Props) => {
             <span className="font-semibold">{currentWeather.humidity}%</span>
           </li>
           <li className="flex justify-between items-center py-3 pr-3">
-            Air Quality{" "}
-            <span className="font-semibold text-green-700">Good</span>
+            UV Index <span className="font-semibold">{currentWeather.uvi}</span>
           </li>
         </ul>
       </div>

@@ -11,7 +11,7 @@ const Weather = () => {
   const { weather, error } = useWeatherHooks();
   return (
     <Layout>
-      <Container className="px-2 flex flex-col gap-5">
+      <Container className="px-2 flex flex-col gap-5 pb-5">
         <ErrorAlert error={error} />
         <WeatherNav />
         <WeatherAlert weather={weather} />
