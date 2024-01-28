@@ -5,13 +5,18 @@ import { Card } from "@/components/ui/card";
 import { WeatherDailyModel } from "@/models/WeatherDailyModel";
 import dayjs from "dayjs";
 import { CloudRainWind, MoveRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 type Props = {
   dailyWeather: WeatherDailyModel[] | null | undefined;
 };
 
 const DailyWeather = ({ dailyWeather }: Props) => {
+  const [searchParams] = useSearchParams();
+
+  const lat = searchParams.get("lat");
+  const lon = searchParams.get("lon");
+
   if (!dailyWeather) {
     return null;
   }
@@ -71,7 +76,10 @@ const DailyWeather = ({ dailyWeather }: Props) => {
           <p>{}</p>
         </li>
         <li className="ml-auto">
-          <Link to="current" className={buttonVariants({ variant: "ghost" })}>
+          <Link
+            to={`/weather/daily?lat=${lat}&lon=${lon}`}
+            className={buttonVariants({ variant: "ghost" })}
+          >
             Show More <MoveRight className="ml-1" />
           </Link>
         </li>
