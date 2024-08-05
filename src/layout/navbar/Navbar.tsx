@@ -35,11 +35,11 @@ const Navbar = ({
               Home
             </Link>
           </li>
-          <li className="hidden md:block">
+          {/* <li className="hidden md:block">
             <Link to="/settings" className="py-2 px-2 block">
               Settings
             </Link>
-          </li>
+          </li> */}
           <li>
             <ThemeToggle />
           </li>

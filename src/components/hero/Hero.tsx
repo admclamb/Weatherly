@@ -3,7 +3,12 @@ import Container from "@/layout/container/Container";
 
 const Hero = () => {
   return (
-    <section className="h-[40vh] bg-black bg-hero-background-light bg-no-repeat bg-center bg-cover">
+    <section
+      className="h-[40vh] bg-black bg-no-repeat bg-center bg-cover"
+      style={{
+        backgroundImage: `url(${"/hero.jpg"})`,
+      }}
+    >
       <div className="h-full  backdrop-blur backdrop-brightness-50">
         <Container className="flex flex-col justify-center h-full -mt-5 p-2">
           <div className="flex flex-col gap-5">

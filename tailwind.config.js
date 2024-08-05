@@ -72,6 +72,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
+        "hero-background": "url(./public/hero.jpg",
         "hero-background-light":
           "url(https://source.unsplash.com/random/1200x1200/?weather,day)",
         "hero-background-dark":

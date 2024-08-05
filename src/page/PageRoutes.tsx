@@ -3,7 +3,6 @@ import Home from "./home/Home";
 import NotFound from "./not-found/NotFound";
 import SearchResults from "./search-results/SearchResults";
 import Weather from "./weather/Weather";
-import Settings from "./settings/Settings";
 import WeatherDaily from "./weather/weather-daily/WeatherDaily";
 import WeatherHourly from "./weather/weather-hourly/WeatherHourly";
 import WeatherToday from "./weather/weather-today/WeatherToday";
@@ -16,7 +15,7 @@ const PageRoutes = () => {
         <Route path="daily" element={<WeatherDaily />} />
         <Route path="hourly" element={<WeatherHourly />} />
       </Route>
-      <Route path="settings" element={<Settings />} />
+      {/* <Route path="settings" element={<Settings />} /> */}
       <Route path="search-results" element={<SearchResults />} />
       <Route index element={<Home />} />
       <Route path="*" element={<NotFound />} />
