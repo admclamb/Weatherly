@@ -39,21 +39,6 @@ const NavbarMobile = ({ className = "" }: Props) => {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link to="/browse" className="py-2 pl-0 pr-2 block">
-                  Browse
-                </Link>
-              </li>
-              <li>
-                <Link to="/saves" className="py-2 pl-0 pr-2 block">
-                  Saves
-                </Link>
-              </li>
-              <li>
-                <Link to="/settings" className="py-2 pl-0 pr-2 block">
-                  Settings
-                </Link>
-              </li>
             </ul>
           </div>
         </SheetContent>
