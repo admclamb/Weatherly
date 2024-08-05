@@ -1,30 +1,60 @@
-# React + TypeScript + Vite
+# Weatherly
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Weatherly is a basic weather app that retrieves local forecast information.
 
-Currently, two official plugins are available:
+Deployed URL [Weatherly](https://weatherly2.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+Follow these steps to set up the project on your local machine:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 1. Fork the Repository
 
-- Configure the top-level `parserOptions` property like this:
+Click on the "Fork" button at the top right of the page to create a copy of the repository in your GitHub account.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### 2. Clone the Repository
+
+```bash
+git clone https://github.com/admclamb/weatherly.git
+cd weatherly
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### 3. Install Dependencies
+
+Ensure you have [Node.js](https://nodejs.org/) installed. Then, run the following command to install the necessary packages:
+
+```bash
+npm install
+```
+
+### 4. Get Your OpenWeather API Key
+
+1. Go to the [OpenWeather API documentation](https://openweathermap.org/api).
+2. Sign up or log in to your account.
+3. Generate an API key.
+
+### 5. Configure the API
+
+Create a `.env` file in the root directory of the project and add your API key:
+
+```env
+VITE_API_SERVER_URL=
+VITE_API_KEY=
+```
+
+A base sample of env file is in `.env.sample`
+
+## Usage
+
+To start the application, run:
+
+```bash
+npm run dev
+```
+
+Open your browser and go to `http://localhost:5173` to view the app.
+
+## Features
+
+- Retrieves local weather forecast information.
+- Simple and user-friendly interface.
